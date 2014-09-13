@@ -69,7 +69,7 @@ I prepare my slides like this, so it's more obvious to me what to talk
 about and more clear to the audience what to look at.  Bullet makes the
 process easier and the resulting file [smaller][diff].
 
-  [diff]: #TODO
+  [diff]: https://github.com/narfdotpl/swift-warsaw-2-laziness-in-swift/commit/d1ccb5920aebbcfd85c975356d4897515de9a014
 
 
 Usage
