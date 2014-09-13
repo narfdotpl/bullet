@@ -1,0 +1,19 @@
+#!/usr/bin/env python
+# encoding: utf-8
+
+import fileinput
+
+
+def apply_breakpoints(text):
+    return text
+
+
+def _main():
+    text = ''
+    for line in fileinput.input():
+        text += line
+
+    print apply_breakpoints(text),
+
+if __name__ == '__main__':
+    _main()
