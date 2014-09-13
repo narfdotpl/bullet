@@ -2,10 +2,31 @@
 # encoding: utf-8
 
 import fileinput
+import re
+
+
+breakpoint_re = re.compile(r'(\n---\n(.(?!\n---\n))*?)•', re.DOTALL)
+backticks_re = re.compile(r'\n```\s')
 
 
 def apply_breakpoints(text):
-    return text
+
+    def replacement(match):
+        s = match.group(1)
+
+        if len(backticks_re.findall(s)) % 2 == 1:
+            separator = '\n```\n'
+        else:
+            separator = '\n'
+
+        return s + separator + s
+
+    new_text = breakpoint_re.sub(replacement, text)
+
+    if new_text != text:
+        return apply_breakpoints(new_text)
+    else:
+        return text
 
 
 def _main():
