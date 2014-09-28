@@ -5,11 +5,9 @@ import fileinput
 import re
 
 
-breakpoint_re = re.compile(r'(\n---\n(.(?!\n---\n))*?)•', re.DOTALL)
-backticks_re = re.compile(r'\n```\s')
-
-
 def apply_breakpoints(text):
+    breakpoint_re = re.compile(r'(\n---\n(.(?!\n---\n))*?)•', re.DOTALL)
+    backticks_re = re.compile(r'\n```\s')
 
     def replacement(match):
         s = match.group(1)
